@@ -39,7 +39,7 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         <h2 className="section-title text-center">Skills &amp; Expertise</h2>
         
-        <div className="grid gap-8 md:gap-6">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-6">
           {skillCategories.map((category, index) => (
             <div 
               key={category.title}
@@ -50,15 +50,18 @@ const Skills = () => {
                 {category.title}
               </h3>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill) => (
-                  <Badge
+                  <div
                     key={skill}
-                    variant="secondary"
-                    className={`tech-tag hover:glow-subtle transition-all duration-300 hover:scale-105`}
+                    className="skill-trapezium relative bg-gradient-to-r from-primary/20 to-secondary/20 text-foreground text-sm font-medium px-4 py-2 hover:from-primary/30 hover:to-secondary/30 transition-all duration-300 hover:scale-105 hover:glow-subtle"
+                    style={{
+                      clipPath: 'polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%)',
+                      minWidth: 'fit-content'
+                    }}
                   >
                     {skill}
-                  </Badge>
+                  </div>
                 ))}
               </div>
             </div>
