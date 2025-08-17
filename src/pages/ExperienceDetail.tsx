@@ -51,8 +51,8 @@ const ExperienceDetail = () => {
         count: 2,
         description: "Received two certificates from Oohr Innovations recognizing technical contributions and successful completion of internship objectives.",
         images: [
-          "/api/placeholder/600/400", // Placeholder for certificate images
-          "/api/placeholder/600/400"
+          "/lovable-uploads/321cc5fe-529b-4c46-afbb-c5c134a0225d.png",
+          "/lovable-uploads/203a6fa6-e3d6-4153-9763-841f859a0247.png"
         ]
       },
       impact: "Contributed to the development of intelligent web applications that enhanced user experience through AI-powered suggestions, while gaining comprehensive experience across the full software development stack.",
@@ -257,17 +257,16 @@ const ExperienceDetail = () => {
             
             <div className="grid md:grid-cols-2 gap-6">
               {experience.certificates.images.map((image, index) => (
-                <div key={index} className="glass border-2 border-primary/20 rounded-lg p-4">
-                  <div className="aspect-[4/3] bg-muted/20 rounded-lg flex items-center justify-center mb-4">
-                    <div className="text-center">
-                      <Award className="h-12 w-12 text-primary mx-auto mb-2" />
-                      <div className="text-sm text-muted-foreground">
-                        Certificate {index + 1}
-                      </div>
-                    </div>
+                <div key={index} className="glass border-2 border-primary/20 rounded-lg p-4 hover:border-primary/40 transition-all duration-300">
+                  <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
+                    <img 
+                      src={image} 
+                      alt={`Oohr Innovations Certificate ${index + 1} - ${experience.title}`}
+                      className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   <div className="text-center">
-                    <div className="font-medium text-primary">Professional Certificate</div>
+                    <div className="font-medium text-primary">Professional Certificate {index + 1}</div>
                     <div className="text-sm text-muted-foreground">Oohr Innovations</div>
                   </div>
                 </div>
